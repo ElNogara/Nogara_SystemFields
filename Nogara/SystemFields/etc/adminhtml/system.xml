@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <tab id="Nogara_systemfields" translate="label" sortOrder="200">
+            <label>Nogara System TAB</label>
+        </tab>
+        <section id="Nogara_fields_section" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Nogara System SECTION</label>
+            <tab>Nogara_systemfields</tab>
+            <resource>Nogara_SystemFields::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>NOGARA SYSTEM GROUP</label>
+                <field id="text_field" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>NOGARA SYSTEM FIELD - Text Field</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="number_field" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number Field</label>
+                    <validate>validate-number</validate>
+                    <comment>Este campo usa a validação validate-number, que permite números com ou sem casas decimais.</comment>
+                </field>
+                <field id="digit_field" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Digit Field</label>
+                    <validate>validate-digits</validate>
+                    <comment>Este campo usa a validação validate-digits, que permite apenas números inteiros.</comment>
+                </field>
+                <field id="textarea_field" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Textarea Field</label>
+                </field>
+                <field id="select_field" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="multiselect_field" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Multi-Select Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale</source_model>
+                </field>
+                <field id="custom_select_field" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Select Field</label>
+                    <source_model>Nogara\SystemFields\Model\Config\Source\CustomOptions</source_model>
+                </field>
+                <field id="custom_colorpicker" translate="label" sortOrder="70" type="text" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Color Picker</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Nogara\SystemFields\Block\Colorpicker</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
